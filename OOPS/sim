@@ -1,0 +1,78 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_0000024fd5d964f0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+C0000024fd5d96f50  .class "hilay" [2]
+   0: "a", "b1"
+   1: "b", "b8"
+ ;
+S_0000024fd5a9e7d0 .scope class, "hilay" "hilay" 3 1, 3 1 0, S_0000024fd5d964f0;
+ .timescale 0 0;
+S_0000024fd5a9e960 .scope autofunction.void, "display" "display" 3 10, 3 10 0, S_0000024fd5a9e7d0;
+ .timescale 0 0;
+v0000024fd5ddbf10_0 .var/cobj "@";
+TD_$unit.hilay.display ;
+    %load/obj v0000024fd5ddbf10_0;
+    %prop/v 0;
+    %pop/obj 1, 0;
+    %load/obj v0000024fd5ddbf10_0;
+    %prop/v 1;
+    %pop/obj 1, 0;
+    %vpi_call/w 3 11 "$display", "a is %0d and b is %0d", S<1,vec4,u1>, S<0,vec4,u8> {2 0 0};
+    %end;
+S_0000024fd5a9eaf0 .scope autofunction.obj, "new" "new" 3 5, 3 5 0, S_0000024fd5a9e7d0;
+ .timescale 0 0;
+v0000024fd5a9ec80_0 .var/cobj "@";
+v0000024fd5a9ed20_0 .var/2u "a", 0 0;
+v0000024fd5a9edc0_0 .var/2s "b", 7 0;
+TD_$unit.hilay.new ;
+    %load/obj v0000024fd5a9ec80_0;
+    %prop/v 0;
+    %pop/obj 1, 0;
+    %load/obj v0000024fd5a9ec80_0;
+    %store/prop/v 0, 1; Store in bool property a
+    %pop/obj 1, 0;
+    %load/obj v0000024fd5a9ec80_0;
+    %prop/v 1;
+    %pop/obj 1, 0;
+    %load/obj v0000024fd5a9ec80_0;
+    %store/prop/v 1, 8; Store in bool property b
+    %pop/obj 1, 0;
+    %end;
+S_0000024fd5d96680 .scope module, "tb" "tb" 3 16;
+ .timescale 0 0;
+v0000024fd5a9ee60_0 .var/cobj "hi";
+    .scope S_0000024fd5d96680;
+T_2 ;
+    %alloc S_0000024fd5a9eaf0;
+    %new/cobj C0000024fd5d96f50;
+    %pushi/vec4 1, 0, 1;
+    %pushi/vec4 3, 0, 8;
+    %store/vec4 v0000024fd5a9edc0_0, 0, 8;
+    %store/vec4 v0000024fd5a9ed20_0, 0, 1;
+    %store/obj v0000024fd5a9ec80_0;
+    %callf/obj TD_$unit.hilay.new, S_0000024fd5a9eaf0;
+    %load/obj v0000024fd5a9ec80_0;
+    %free S_0000024fd5a9eaf0;
+    %store/obj v0000024fd5a9ee60_0;
+    %alloc S_0000024fd5a9e960;
+    %load/obj v0000024fd5a9ee60_0;
+    %store/obj v0000024fd5ddbf10_0;
+    %callf/void TD_$unit.hilay.display, S_0000024fd5a9e960;
+    %free S_0000024fd5a9e960;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "CLASS2.sv";
