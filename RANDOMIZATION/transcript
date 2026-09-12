@@ -1,0 +1,32 @@
+# ** Note: (vsim-220) 'C:/altera_pro/26.1.1/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# vsim -c work.tb 
+# Start time: 11:05:34 on Sep 12,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-220) 'C:/altera_pro/26.1.1/questa_fse/win64/../modelsim.ini' is used as the ini file.
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.3 win64 Sep 15 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb(fast)
+# ** Error: Failure to checkout svverification license feature.
+# ** Fatal: (vsim-7099) Unable to check out a verification license for the randomize() feature.
+# 
+#    Time: 0 ns  Iteration: 0  Process: /tb/#INITIAL#6 File: RAND.sv Line: 7
+# Fatal error at RAND.sv line 7
+# 
+# HDL call sequence:
+# Stopped at RAND.sv 7  
+# 
+# End time: 11:07:00 on Sep 12,2026, Elapsed time: 0:01:26
+# Errors: 2, Warnings: 0
