@@ -27,3 +27,10 @@ export VERILATOR_ROOT=$HOME/verilator
 $VERILATOR_ROOT/bin/verilator_bin --binary --timing --top-module tb -Wno-WIDTHTRUNC *.sv
 ./obj_dir/Vtb
 ```
+ASSERTIONS used questa sim 
+```
+vlog *.sv
+vsim -c work.tb
+run -all
+quit
+```
