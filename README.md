@@ -41,3 +41,10 @@ vsim -c work.tb
 run -all
 quit
 ```
+INTERPROCESS COMMUNICATION used questa sim 
+```
+vlog *.sv
+vsim -c work.tb
+run -all
+quit
+```
