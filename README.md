@@ -34,3 +34,10 @@ vsim -c work.tb
 run -all
 quit
 ```
+INTERFACE used questa sim 
+```
+vlog *.sv
+vsim -c work.tb
+run -all
+quit
+```
