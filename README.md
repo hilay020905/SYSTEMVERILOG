@@ -41,6 +41,11 @@ vsim -c work.tb
 run -all
 quit
 ```
+
+UVM used EDA PLAYGROUND
+![Result](IMAGES/OPENLANE_FLOW.png)
+
+
 INTERPROCESS COMMUNICATION used questa sim 
 ```
 vlog *.sv
