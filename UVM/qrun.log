@@ -1,0 +1,164 @@
+QuestaSim-64 qrun 2025.2 Utility 2025.05 May 31 2025
+Start time: 04:10:02 on Oct 18,2026
+qrun -batch -access=rw+/. -uvmhome uvm-1.1d -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+** Note: (qrun-220) 'modelsim.ini' is used as the ini file.
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 04:10:02 on Oct 18,2026
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.1d/src" -statslog qrun.out/stats_log -csession=incr 
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling package uvm_pkg (uvm-1.1d Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.1d Built-in)
+-- Compiling interface and_if
+-- Compiling module and_block
+-- Compiling package and_pkg
+-- Compiling module tb
+-- Importing package and_pkg
+
+Top level modules:
+	tb
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/dpi/uvm_dpi.cc
+End time: 04:10:04 on Oct 18,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 04:10:04 on Oct 18,2026
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	tb
+
+Analyzing design...
+-- Loading module tb
+-- Importing package uvm_pkg (uvm-1.1d Built-in)
+-- Importing package and_pkg
+-- Loading package questa_uvm_pkg
+-- Loading interface and_if
+-- Loading module and_block
+Optimizing 7 design-units (inlining 0/3 module instances):
+-- Optimizing package uvm_pkg (uvm-1.1d Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package and_pkg(fast)
+-- Optimizing module tb(fast)
+-- Optimizing module and_block(fast)
+-- Optimizing interface and_if(fast__2)
+-- Optimizing interface and_if(fast)
+Optimized design name is qrun_opt
+End time: 04:10:12 on Oct 18,2026, Elapsed time: 0:00:08
+Errors: 0, Warnings: 1
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 04:10:12 on Oct 18,2026
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.and_if(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.and_pkg(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.tb(fast)
+# Loading work.and_if(fast__2)
+# Loading work.and_block(fast)
+# ** Note: (vsim-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+# Loading /tmp/root@dcf849b69fa4_dpi_35/linux_x86_64_gcc-11/vsim_auto_compile.so
+# 
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test and_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               and_test                -     @471 
+#   m_top_env                and_env                 -     @478 
+#     m_agent                and_agent               -     @485 
+#       m_coverage           and_coverage            -     @639 
+#         analysis_imp       uvm_analysis_imp        -     @646 
+#       m_driver             and_driver              -     @609 
+#         rsp_port           uvm_analysis_port       -     @624 
+#         seq_item_port      uvm_seq_item_pull_port  -     @616 
+#       m_monitor            and_monitor             -     @632 
+#         mon_analysis_port  uvm_analysis_port       -     @655 
+#       m_sequencer          and_sequencer           -     @500 
+#         rsp_export         uvm_analysis_export     -     @507 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @601 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     m_scoreboard           and_scoreboard          -     @492 
+#       ap_imp               uvm_analysis_imp        -     @669 
+# --------------------------------------------------------------
+# 
+# UVM_INFO testbench.sv(48) @ 0: uvm_test_top.m_top_env.m_agent.m_driver [DRV] driving a=0 b=0
+# UVM_INFO testbench.sv(48) @ 10: uvm_test_top.m_top_env.m_agent.m_driver [DRV] driving a=0 b=1
+# UVM_INFO testbench.sv(203) @ 11: uvm_test_top.m_top_env.m_scoreboard [PASS] AND gate output correct
+# UVM_INFO testbench.sv(48) @ 20: uvm_test_top.m_top_env.m_agent.m_driver [DRV] driving a=1 b=0
+# UVM_INFO testbench.sv(203) @ 21: uvm_test_top.m_top_env.m_scoreboard [PASS] AND gate output correct
+# UVM_INFO testbench.sv(48) @ 30: uvm_test_top.m_top_env.m_agent.m_driver [DRV] driving a=1 b=1
+# UVM_INFO testbench.sv(203) @ 31: uvm_test_top.m_top_env.m_scoreboard [PASS] AND gate output correct
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 60: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   12
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [DRV]     4
+# [PASS]     3
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 60 ns  Iteration: 54  Instance: /tb
+# End time: 04:10:15 on Oct 18,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+End time: 04:10:15 on Oct 18,2026, Elapsed time: 0:00:13
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   1
